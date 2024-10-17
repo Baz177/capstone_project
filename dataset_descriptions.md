@@ -26,7 +26,9 @@ Dataset shape: dataset has 1,000,000 rows and 8 columns.
 Dataset 2
 
 Dataset Origin: https://www.kaggle.com/datasets/chitwanmanchanda/fraudulent-transactions-data 
+
 Dataset Name: Fraud.csv
+
 Discriptions: Data containing fraudulent transactions for a financial company
 
 Attribute Description: 
@@ -50,6 +52,7 @@ Dataset shape: Dataset has 6,362,620 rows and 11 columns.
 Dataset 3
 
 Dataset origin: https://www.kaggle.com/datasets/neharoychoudhury/credit-card-fraud-data/data?select=fraud_data.csv
+
 Dataset Name: fraud_data.csv
 
 Description: This dataset consists of credit card transactions in the western United States. 
@@ -77,3 +80,5 @@ is_fraud               Binary result of Fraud or not
 Use Case: The dataset can be used to identity fraudulent transaction and categorise them base on location. It can also be used to detect and predict future occurences of fraud 
 
 Dataset shape: Dataset has 14,446 rows and 15 columns.
+
+P.S: A brief glance of each dataset can be viewed by opening the data_collection.ipynb file 

@@ -8,7 +8,7 @@ Dataset Name: card_transdata.csv
 
 Description: This dataset captures transaction patterns and behaviors that could indicate potential fraud in card transactions. The data is composed of several features designed to reflect the transactional context such as geographical location, transaction medium, and spending behavior relative to the user's history.
 
-#Attribute Description:
+Attribute Description:
 
 distance_from_home: This is a numerical feature representing the geographical distance in kilometers between the transaction location and the cardholder's home address.
 distance_from_last_transaction: This numerical attribute measures the distance in kilometers from the location of the last transaction to the current transaction location.

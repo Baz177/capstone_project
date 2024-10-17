@@ -1,7 +1,9 @@
 Three Datasets were collected for this capstone project. Each dataset indicate whether a transaction was fraud or not as well the other details that may help predict whether it was fraud or not. This document will describe each in detail. 
 
 Dataset 1 
+
 Dataset origin: https://www.openml.org/search?type=data&status=active&id=45955&sort=runs 
+
 Dataset Name: card_transdata.csv
 
 Description: This dataset captures transaction patterns and behaviors that could indicate potential fraud in card transactions. The data is composed of several features designed to reflect the transactional context such as geographical location, transaction medium, and spending behavior relative to the user's history.

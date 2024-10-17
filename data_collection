@@ -1,0 +1,121 @@
+#Dataset origin: https://www.openml.org/search?type=data&status=active&id=45955&sort=runs 
+#Dataset Name: card_transdata.csv s 
+
+#Description: This dataset captures transaction patterns and behaviors that could indicate potential fraud in card transactions. 
+#The data is composed of several features designed to reflect the transactional context such as geographical location, transaction medium, and spending behavior relative to the user's history.
+
+#Attribute Description:
+
+#distance_from_home: This is a numerical feature representing the geographical distance in kilometers between the transaction location and the cardholder's home address.
+#distance_from_last_transaction: This numerical attribute measures the distance in kilometers from the location of the last transaction to the current transaction location.
+#ratio_to_median_purchase_price: A numeric ratio that compares the transaction's price to the median purchase price of the user's transaction history.
+#repeat_retailer: A binary attribute where '1' signifies that the transaction was conducted at a retailer previously used by the cardholder, and '0' indicates a new retailer.
+#used_chip: This binary feature indicates whether the transaction was made using a chip (1) or not (0).
+#used_pin_number: Another binary feature, where '1' signifies the use of a PIN number for the transaction, and '0' shows no PIN number was used.
+#online_order: This attribute identifies whether the purchase was made online ('1') or offline ('0').
+#fraud: A binary target variable indicating whether the transaction was fraudulent ('1') or not ('0').
+
+#Use Case: This dataset is particularly suited for developing machine learning models to detect potentially fraudulent transactions. 
+df = pd.read_csv('card_transdata.csv')
+df
+distace_from_home	distance_from_last_transaction	ratio_to_median_purchase_price	repeat_retailer	used_chip	used_pin_number	online_order	fraud
+0	57.877857	0.311140	1.945940	1	1	0	0	0
+1	10.829943	0.175592	1.294219	1	0	0	0	0
+2	5.091079	0.805153	0.427715	1	0	0	1	0
+3	2.247564	5.600044	0.362663	1	1	0	1	0
+4	44.190936	0.566486	2.222767	1	1	0	1	0
+...	...	...	...	...	...	...	...	...
+999995	2.207101	0.112651	1.626798	1	1	0	0	0
+999996	19.872726	2.683904	2.778303	1	1	0	0	0
+999997	2.914857	1.472687	0.218075	1	1	0	1	0
+999998	4.258729	0.242023	0.475822	1	0	0	1	0
+999999	58.108125	0.318110	0.386920	1	1	0	1	0
+1000000 rows × 8 columns
+
+df.shape
+(1000000, 8)
+#Dataset Origin: https://www.kaggle.com/datasets/chitwanmanchanda/fraudulent-transactions-data 
+#Dataset Name: Fraud.csv
+#Discriptions: Data containing fraudulent transactions for a financial company
+
+#Attribute Description: 
+
+#step - maps a unit of time in the real world. In this case 1 step is 1 hour of time. Total steps 744 (30 days simulation).
+#type - CASH-IN, CASH-OUT, DEBIT, PAYMENT and TRANSFER.
+#amount - amount of the transaction in local currency.
+#nameOrig - customer who started the transaction
+#oldbalanceOrg - initial balance before the transaction
+#newbalanceOrig - new balance after the transaction
+#nameDest - customer who is the recipient of the transaction
+#oldbalanceDest - initial balance recipient before the transaction. Note that there is not information for customers that start with M (Merchants).
+#newbalanceDest - new balance recipient after the transaction. Note that there is not information for customers that start with M (Merchants).
+#isFraud - This is the transactions made by the fraudulent agents. 
+#isFlaggedFraud - The business model aims to control massive transfers from one account to another and flags illegal attempts. 
+
+#Use Case: #In this specific dataset the fraudulent behavior of the agents aims to profit by taking control of customers accounts and 
+#try to empty the funds by transferring to another account and then cashing out of the system
+#An illegal attempt in this dataset is an attempt to transfer more than 200.000 in a single transaction.
+fraud = pd.read_csv(r'C:\Users\bkt29\OneDrive\Desktop\ML Engineering and AI Bootcamp\Capstone Project\Fraud Datasets\Fraud.csv')
+fraud
+step	type	amount	nameOrig	oldbalanceOrg	newbalanceOrig	nameDest	oldbalanceDest	newbalanceDest	isFraud	isFlaggedFraud
+0	1	PAYMENT	9839.64	C1231006815	170136.00	160296.36	M1979787155	0.00	0.00	0	0
+1	1	PAYMENT	1864.28	C1666544295	21249.00	19384.72	M2044282225	0.00	0.00	0	0
+2	1	TRANSFER	181.00	C1305486145	181.00	0.00	C553264065	0.00	0.00	1	0
+3	1	CASH_OUT	181.00	C840083671	181.00	0.00	C38997010	21182.00	0.00	1	0
+4	1	PAYMENT	11668.14	C2048537720	41554.00	29885.86	M1230701703	0.00	0.00	0	0
+...	...	...	...	...	...	...	...	...	...	...	...
+6362615	743	CASH_OUT	339682.13	C786484425	339682.13	0.00	C776919290	0.00	339682.13	1	0
+6362616	743	TRANSFER	6311409.28	C1529008245	6311409.28	0.00	C1881841831	0.00	0.00	1	0
+6362617	743	CASH_OUT	6311409.28	C1162922333	6311409.28	0.00	C1365125890	68488.84	6379898.11	1	0
+6362618	743	TRANSFER	850002.52	C1685995037	850002.52	0.00	C2080388513	0.00	0.00	1	0
+6362619	743	CASH_OUT	850002.52	C1280323807	850002.52	0.00	C873221189	6510099.11	7360101.63	1	0
+6362620 rows × 11 columns
+
+fraud.shape
+(6362620, 11)
+#Dataset origin: https://www.kaggle.com/datasets/neharoychoudhury/credit-card-fraud-data/data?select=fraud_data.csv
+#Dataset Name: fraud_data.csv
+
+#Description: This dataset consists of credit card transactions in the western United States. 
+#It includes information about each transaction including customer details, the merchant and category of purchase, and whether or not the transaction was a fraud.
+
+#Attribute Description:
+
+#trans_date_trans_time  Transaction DateTime 
+#merchant               Merchant Name 
+#category               Category of Merchant 
+#amt                    Amount of Transaction
+#city                   City of Credit Card Holder 
+#state                  State of Credit Card Holder 
+#lat                    Latitude Location of Purchase 
+#long                   Longitude Location of Purchase 
+#city_pop               Credit Card Holder's City Population   
+#job                    Job of Credit Card Holder
+#dob                    Date of Birth of Credit Card Holder 
+#trans_num              Transaction Number 
+#merch_lat              Latitude Location of Merchant 
+#merch_long             Longitude location of Merchant 
+#is_fraud               Binary result of Fraud or not 
+
+
+#Use Case: The dataset can be used to identity fraudulent transaction and categorise them base on location. It can also be used to detect and predict
+#future occurences of fraud 
+fraud_data = pd.read_csv(r'C:\Users\bkt29\OneDrive\Desktop\ML Engineering and AI Bootcamp\Capstone Project\Fraud Datasets\fraud_data.csv')
+fraud_data
+trans_date_trans_time	merchant	category	amt	city	state	lat	long	city_pop	job	dob	trans_num	merch_lat	merch_long	is_fraud
+0	04-01-2019 00:58	"Stokes, Christiansen and Sipes"	grocery_net	14.37	Wales	AK	64.7556	-165.6723	145	"Administrator, education"	09-11-1939	a3806e984cec6ac0096d8184c64ad3a1	65.654142	-164.722603	1
+1	04-01-2019 15:06	Predovic Inc	shopping_net	966.11	Wales	AK	64.7556	-165.6723	145	"Administrator, education"	09-11-1939	a59185fe1b9ccf21323f581d7477573f	65.468863	-165.473127	1
+2	04-01-2019 22:37	Wisozk and Sons	misc_pos	49.61	Wales	AK	64.7556	-165.6723	145	"Administrator, education"	09-11-1939	86ba3a888b42cd3925881fa34177b4e0	65.347667	-165.914542	1
+3	04-01-2019 23:06	Murray-Smitham	grocery_pos	295.26	Wales	AK	64.7556	-165.6723	145	"Administrator, education"	09-11-1939	3a068fe1d856f0ecedbed33e4b5f4496	64.445035	-166.080207	1
+4	04-01-2019 23:59	Friesen Lt	health_fitness	18.17	Wales	AK	64.7556	-165.6723	145	"Administrator, education"	09-11-1939	891cdd1191028759dc20dc224347a0ff	65.447094	-165.446843	1
+...	...	...	...	...	...	...	...	...	...	...	...	...	...	...	...
+14441	22-01-2019 00:37	Hudson-Grady	shopping_pos	122.00	Athena	OR	45.8289	-118.4971	1302	Dealer	18-10-1976	699a4c06b22711bf3e0d8ef91232d356	46.442439	-118.524214	0
+14442	22-01-2019 00:41	"Nienow, Ankunding and Collie"	misc_pos	9.07	Gardiner	OR	43.7857	-124.1437	260	"Engineer, maintenance"	01-09-1956	080d620d24815c7d6c637cf0b71dde8e	42.901265	-124.995317	0
+14443	22-01-2019 00:42	Pacocha-O'Reilly	grocery_pos	104.84	Alva	WY	44.6873	-104.4414	110	"Administrator, local government"	16-05-1973	3c346c8cd627c5fe3ed57430db2e9ae7	45.538062	-104.542117	0
+14444	22-01-2019 00:48	"Bins, Balistreri and Beatty"	shopping_pos	268.16	Wales	AK	64.7556	-165.6723	145	"Administrator, education"	09-11-1939	e66ffcc95ba7fc490486242af1205d04	64.081462	-165.898698	0
+14445	22-01-2019 00:55	Daugherty-Thompson	food_dining	50.09	Unionville	MO	40.4815	-92.9951	3805	"Investment banker, corporate"	15-09-1950	65e7370f473f9b9d75796c8033a7c929	40.387243	-92.224871	0
+14446 rows × 15 columns
+
+fraud_data.shape 
+(14446, 15)
+ 

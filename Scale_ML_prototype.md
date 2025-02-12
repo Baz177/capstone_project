@@ -4,7 +4,7 @@ After performing Hyperparameter tuning on a sample of the dataset, the best mode
 
 To scale the Maching Learning model, three steps were taken: 
 1. Code Reduction and Streamlining: 
-An effor was made to reduce code and streamline essential code using Sklearn Pipelines where necessary. Some code was removed to enhance execution speed. Essential code were shorten where possibble to enhace overall execution. 
+An effor was made to reduce code and streamline essential code using Sklearn Pipelines where necessary. Some code was removed to enhance execution speed. Essential code were shorten where possibble to enhace overall execution. Also data structure was truned to numpy arrays to also fascilatate speed of execution. 
 
 2. PCA transform: 
 PCA is a technique used to reduce the dimensionality of a dataset while preserving as much variability as possible. Using PCA allows only the most important featurers to ba carried foward in the code, minimizing data while enhancing exectuion speeds 

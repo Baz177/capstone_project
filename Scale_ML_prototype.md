@@ -1,4 +1,4 @@
-Scaling ML model for Entire Dataset 
+***Scaling ML model for Entire Dataset***
 
 After performing Hyperparameter tuning on a sample of the dataset, the best model was used to train the entire dataset. This step drastically reduces the time it would take to find hyperparameters on the entire datset. 
 

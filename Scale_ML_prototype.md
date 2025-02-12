@@ -2,7 +2,7 @@
 
 After performing Hyperparameter tuning on a sample of the dataset, the best model was used to train the entire dataset. This step drastically reduces the time it would take to find hyperparameters on the entire datset. 
 
-To scale the Maching Learning model, three steps were taken: 
+To scale the Machine Learning model, three steps were taken: 
 1. Code Reduction and Streamlining: 
 An effor was made to reduce code and streamline essential code using Sklearn Pipelines where necessary. Some code was removed to enhance execution speed. Essential code were shorten where possibble to enhace overall execution. Also data structure was truned to numpy arrays to also fascilatate speed of execution. 
 
